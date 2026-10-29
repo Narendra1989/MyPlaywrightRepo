@@ -1,0 +1,36 @@
+import { test, expect } from '@playwright/test';
+
+test.describe('navigation', () => {
+
+  test.beforeEach(async ({ page }) => {
+    // Go to the starting url before each test.
+    await page.goto('');
+  });
+
+test('has title', async ({ page }) => {
+  // await page.goto('https://playwright.dev/');
+
+  // Expect a title "to contain" a substring.
+  await expect(page).toHaveTitle(/Playwright/);
+});
+
+test('@smoke get started link', async ({ page }) => {
+  // await page.goto('https://playwright.dev/');
+
+  // Click the get started link.
+  await page.getByRole('link', { name: 'Get started' }).click();
+
+  // Expects page to have a heading with the name of Installation.
+  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+});
+
+test('@regression Verify MCP', async ({ page }) => {
+  // await page.goto('https://playwright.dev/');
+
+   await page.goto('todo');
+  await page.getByRole('link', { name: 'MCP' }).click();
+  await page.getByRole('heading', { name: 'Playwright MCP', exact: true }).click();
+  // await page.pause();
+});
+
+});
