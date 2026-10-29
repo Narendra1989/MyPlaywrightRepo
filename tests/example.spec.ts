@@ -15,7 +15,6 @@ test('has title', async ({ page }) => {
 });
 
 test('@smoke get started link', async ({ page }) => {
-  // await page.goto('https://playwright.dev/');
 
   // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
@@ -33,4 +32,15 @@ test('@regression Verify MCP', async ({ page }) => {
   // await page.pause();
 });
 
+test('@regression Verify MCP', async ({ page }) => {
+  // await page.goto('https://playwright.dev/');
+
+   await page.goto('todo');
+  await page.getByRole('link', { name: 'MCP' }).click();
+  await page.getByRole('heading', { name: 'Plywright MCP', exact: true }).click();
+  // await page.pause();
 });
+
+
+});
+
