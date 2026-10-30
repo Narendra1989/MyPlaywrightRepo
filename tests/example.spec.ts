@@ -32,7 +32,7 @@ test('@regression Verify MCP', async ({ page }) => {
   // await page.pause();
 });
 
-test('@regression Verify MCP', async ({ page }) => {
+test('Verifying MCP', async ({ page }) => {
   // await page.goto('https://playwright.dev/');
 
    await page.goto('todo');
